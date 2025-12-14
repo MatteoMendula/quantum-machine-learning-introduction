@@ -1,0 +1,7 @@
+pennylane
+pennylane-lightning
+torch
+numpy
+pandas
+scikit-learn
+matplotlib
