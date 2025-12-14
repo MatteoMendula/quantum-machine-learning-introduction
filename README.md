@@ -1,4 +1,4 @@
-# Quantum ML (quaptor) — Local QML examples
+# Quantum ML — Local QML examples
 
 Brief overview
 - This repository contains implementations of quantum machine-learning building blocks using PennyLane and PyTorch: variational quantum circuits (`VQC`), a multi-block composition (`MultiVQC`), a simple quantum convolution `QConv`, and a quantum-kernel SVM (`Kernel_QSVM`). There's also utilities for training, evaluation and cross-validation.
@@ -21,35 +21,6 @@ python -m pip install -r requirements.txt
 
 Running the example `testDiabetes.py`
 - The script expects a CSV at `./test/qml_applications/diabetes.csv` (see the `pd.read_csv(...)` call). Make sure the dataset is placed there or update the path in `testDiabetes.py`.
-- The example imports `src.quaptor.*` modules and — in the present copy — uses a hard-coded `sys.path.append` to point to a different location. You have two simple options to run the example locally:
-
-  1) Install the `quaptor` package (if you have it in `src/quaptor`) in editable mode from its project root:
-
-```bash
-cd /path/to/quaptor/project_root
-python -m pip install -e .
-# then run the example in this repo
-cd /home/matteo/Documents/postDoc/QML/qml
-python testDiabetes.py
-```
-
-  2) Adjust the import lines in `testDiabetes.py` to use the local `qml` package instead of `src.quaptor.qml` (quick local fix). For example, replace:
-
-```python
-from src.quaptor.qml import VQC, MultiVQC, Utils
-```
-
-with:
-
-```python
-from qml.qml import VQC, MultiVQC, Utils
-```
-
-or modify `sys.path` at the top of `testDiabetes.py` to include this repo root:
-
-```python
-import sys
-sys.path.append(".")
 ```
 
 Notes and tips
